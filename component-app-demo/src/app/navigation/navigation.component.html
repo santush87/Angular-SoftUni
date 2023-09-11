@@ -1,3 +1,17 @@
 <div id="nav">
-    <button (click)="handleClick()">Click me!</button>
+  <!-- <span *ngIf="toggle">{{ title }}</span> -->
+  <!-- <span>{{ isActive ? "SHOW" : "HIDE" }}</span> -->
+  <span *ngIf="isActive">
+    <ul>
+      <li *ngFor="let user of activeUsers">
+        {{ user.name }} is {{user.age}} years old!
+      </li>
+    </ul>
+  </span>
+  <span *ngIf="!isActive">
+    <div>Nothing is active</div>
+  </span>
+  <button (click)="handleClick()">
+    Make {{ isActive ? "Inactive" : "Active" }}
+  </button>
 </div>
